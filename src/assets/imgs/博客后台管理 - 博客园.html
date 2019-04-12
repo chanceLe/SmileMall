@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://i.cnblogs.com/EditPosts.aspx?opt=1 -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>
+			博客后台管理 - 博客园</title>
+		    
+            <meta name="referrer" content="origin">
+            <meta name="renderer" content="webkit">
+            <meta name="force-rendering" content="webkit">
+            <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1">
+			<link rel="stylesheet" type="text/css" href="./博客后台管理 - 博客园_files/admin.css">
+			<script src="./博客后台管理 - 博客园_files/jquery.js" type="text/javascript"></script>
+            <script src="./博客后台管理 - 博客园_files/json2.js" type="text/javascript"></script>      
+            <script type="text/javascript" src="./博客后台管理 - 博客园_files/jquery.cnblogs.thickbox.js"></script>
+<script type="text/javascript" src="./博客后台管理 - 博客园_files/admin.js"></script>
+	</head>	
+	<body id="Posts">
+		<form method="post" action="https://i.cnblogs.com/EditPosts.aspx?opt=1" id="frmMain">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">window.onbeforeunload = function() { if(!canLeavePage()) return ('确认离开当前页面吗？未保存的数据将会丢失！');}</script><script language="JavaScript" src="./博客后台管理 - 博客园_files/uicontrols.js"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="FE27D343">
+</div>
+			<table id="BodyTable" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td id="Header" colspan="2"><div id="SiteNav"><a href="http://home.cnblogs.com/set/account/" target="_blank">修改密码</a>&nbsp;|&nbsp;<a href="https://i.cnblogs.com/BlogBackup.aspx">备份</a>&nbsp;|&nbsp;<a href="http://www.cnblogs.com/Skins.aspx" target="_blank">模板</a></div>
+						<div id="BlogTitle"><a id="BlogTitleLink" href="https://www.cnblogs.com/chengyunshen/">橙云生</a>
+						</div>
+						<div id="SiteTitle">
+							<a id="TitleLink" href="https://www.cnblogs.com/"><img src="./博客后台管理 - 博客园_files/adminlogo.gif" alt=""></a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="LeftNavHeader">操作</div>
+					</td>
+					<td class="NavHeaderRow">
+						<ul id="TopNav">
+							<li>
+								<a href="https://i.cnblogs.com/EditPosts.aspx" id="TabPosts">随笔</a>
+							</li>
+							<li>
+								<a href="https://i.cnblogs.com/EditArticles.aspx" id="TabArticles">文章</a>
+							</li>
+							
+							<li>
+								<a href="https://i.cnblogs.com/EditDiary.aspx" id="TabDiary">日记</a>
+							</li>
+							<li>
+								<a href="https://i.cnblogs.com/Feedback.aspx" id="TabFeedback">评论</a>
+							</li>
+							
+							<li>
+								<a href="https://i.cnblogs.com/EditLinks.aspx" id="TabLinks">链接</a>
+							</li>
+							
+							<li id="GalleryTab">
+								<a href="https://i.cnblogs.com/EditGalleries.aspx" id="TabGalleries">相册</a>
+							</li>
+							<li id="FilesTab">
+								<a href="https://i.cnblogs.com/Files.aspx" id="TabFiles">文件</a>
+							</li>
+							
+							<li>
+								<a href="https://i.cnblogs.com/Configure.aspx" id="TabConfigure">设置</a>
+							</li>
+							<li>
+								<a href="https://i.cnblogs.com/Preferences.aspx" id="TabPreferences">选项</a>
+							</li>
+							
+							
+							
+							
+						</ul>
+						<div id="SubNav">
+							
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="NavLeftCell">						
+						<div class="left_nav">
+							<ul id="LinksActions"><li><a href="https://i.cnblogs.com/EditPosts.aspx?opt=1">» 添加新随笔</a></li><li><a href="https://i.cnblogs.com/EditPosts.aspx?IsDraft=1">» 草稿箱</a></li><li><a href="https://i.cnblogs.com/Preferences.aspx#Editor">» 设置默认编辑器</a></li><li><a href="http://home.cnblogs.com/group/topic/8550.html" target="_blank">» 博客客户端</a></li><li><a href="https://i.cnblogs.com/ManageSignature.aspx" target="_blank">» 博客签名</a></li><li><a href="https://i.cnblogs.com/BlogBackup.aspx?type=1">» 博客备份</a></li><li><a href="https://i.cnblogs.com/Import.aspx?catid=1">» 博客搬家</a></li></ul>
+						</div>
+						<div id="CategoriesHeader" class="LeftNavHeader">
+							分类
+						</div>
+						<div class="left_nav">
+							<ul id="LinksCategories"><li><a href="https://i.cnblogs.com/EditCategories.aspx?catid=1">[编辑分类]</a></li><li><a href="https://i.cnblogs.com/EditPosts.aspx">[所有分类]</a></li><li><a href="https://i.cnblogs.com/EditPosts.aspx?catid=-2">[未分类]</a></li></ul>
+						</div>
+					</td>
+					<td id="Body">
+						<div id="Main">
+							
+	
+<script type="text/javascript">    
+    var isEdit = true;
+    var isNewPost = true;
+    var currentEditorId = 'Editor_Edit_EditorBody';
+    var currentUseEditor = 5;
+    var txbTitleId = 'Editor_Edit_txbTitle';
+</script>
+<div id="Editor_Messages">
+	
+
+</div>
+
+<div id="Editor_Edit">
+	<div id="Editor_Edit_Header" class="CollapsibleTitle">
+		<span id="Editor_Edit_headerTitle">添加随笔</span>
+	</div><div id="Editor_Edit_Contents">
+		
+    <div id="edit_container">
+        <div id="edit_title">
+            <b>标题</b>            
+            <br>
+            <input name="Editor$Edit$txbTitle" type="text" maxlength="200" id="Editor_Edit_txbTitle" onblur="localPreserver.saveDraftTitle();" onkeydown="title_keydown(event);" style="width:99%;">
+        </div>
+        <div id="edit_body">
+            <div id="edit_body_tip">
+            <b>内容</b>(Markdown编辑器，支持拖放/粘贴上传图片) <span id="write_hint" style="color: green;">本地自动保存于15:14:20，<a href="javascript:void(0);" onclick="localPreserver.showSaved();return false;">查看</a></span>
+            </div>
+            <img title="上传图片" onclick="markdown_image_upload(&#39;Editor_Edit_EditorBody&#39;);return false;" src="./博客后台管理 - 博客园_files/img.gif" alt="上传图片"><textarea name="Editor$Edit$EditorBody" rows="2" cols="20" id="Editor_Edit_EditorBody" onkeydown="insert_tab(this,event)"></textarea><script src="./博客后台管理 - 博客园_files/paste-upload-image.js"></script>
+<script>$('#Editor_Edit_EditorBody').pasteUploadImage('www.cnblogs.com');</script>
+        </div>
+        <div id="Editor_Edit_APOptions">
+			<div id="Editor_Edit_APOptions_Header" class="CollapsibleTitle">
+				<a id="Editor_Edit_APOptions_Link" onclick="ToggleVisible(&#39;Editor_Edit_APOptions_Contents&#39;,&#39;Editor_Edit_APOptions_LinkImage&#39;,&#39;/resources/toggle_gray_up.gif&#39;,&#39;/resources/toggle_gray_down.gif&#39;); return false;" href="https://i.cnblogs.com/UserControls/#"><img id="Editor_Edit_APOptions_LinkImage" src="./博客后台管理 - 博客园_files/toggle_gray_down.gif"></a><span id="Editor_Edit_APOptions_headerTitle" class="CollapsibleTitle">常用选项</span>
+			</div><div id="Editor_Edit_APOptions_Contents" class="Edit">
+				
+            <div class="edit_option">
+                <div id="Editor_Edit_APOptions_Advancedpanel1">
+					<div id="Editor_Edit_APOptions_Advancedpanel1_Header" class="subCollapsibleTitle">
+						<a id="Editor_Edit_APOptions_Advancedpanel1_Link" onclick="ToggleVisible(&#39;Editor_Edit_APOptions_Advancedpanel1_Contents&#39;,&#39;Editor_Edit_APOptions_Advancedpanel1_LinkImage&#39;,&#39;/resources/toggle_gray_up.gif&#39;,&#39;/resources/toggle_gray_down.gif&#39;); return false;" href="https://i.cnblogs.com/UserControls/#"><img id="Editor_Edit_APOptions_Advancedpanel1_LinkImage" src="./博客后台管理 - 博客园_files/toggle_gray_down.gif"></a><span id="Editor_Edit_APOptions_Advancedpanel1_headerTitle" class="subCollapsibleTitleText">个人分类</span>
+					</div><div id="Editor_Edit_APOptions_Advancedpanel1_Contents" class="Edit">
+						
+                    
+                
+					</div>
+				</div>
+                <div id="Editor_Edit_APOptions_APSiteHome">
+					<div id="Editor_Edit_APOptions_APSiteHome_Header" class="subCollapsibleTitle">
+						<a id="Editor_Edit_APOptions_APSiteHome_Link" onclick="ToggleVisible(&#39;Editor_Edit_APOptions_APSiteHome_Contents&#39;,&#39;Editor_Edit_APOptions_APSiteHome_LinkImage&#39;,&#39;/resources/toggle_gray_up.gif&#39;,&#39;/resources/toggle_gray_down.gif&#39;); return false;" href="https://i.cnblogs.com/UserControls/#"><img id="Editor_Edit_APOptions_APSiteHome_LinkImage" src="./博客后台管理 - 博客园_files/toggle_gray_down.gif"></a><span id="Editor_Edit_APOptions_APSiteHome_headerTitle" class="subCollapsibleTitleText">发布选项</span>
+					</div><div id="Editor_Edit_APOptions_APSiteHome_Contents" class="Edit">
+						                    
+                    <div id="Editor_Edit_APOptions_APSiteHome_panelHomeCandidate">
+							
+                    <input name="Editor$Edit$APOptions$APSiteHome$cbHomeCandidate" type="checkbox" id="Editor_Edit_APOptions_APSiteHome_cbHomeCandidate" onclick="OnHomeCandidateChange(this)">发布至首页候选区                     
+                        <br>
+                    
+						</div>            
+                    <input name="Editor$Edit$APOptions$APSiteHome$cbIsPublishToSiteHome" type="checkbox" id="Editor_Edit_APOptions_APSiteHome_cbIsPublishToSiteHome" onclick="OnSiteHomeChange(this)">发布至博客园首页（原创、精品、知识分享）
+                    <div style="font-size:12px;/*color:#1A64A2;*/padding:5px 5px 5px 5px;">
+                    【发文说明】<br> 
+                        博客园是面向开发者的知识分享社区，不允许发布任何推广、广告、政治方面的内容。<br>                
+                        博客园首页（即网站首页）只能发布原创的、高质量的、能让读者从中学到东西的内容。<br>
+                        如果博文质量不符合首页要求，会被工作人员移出首页，望理解。如有疑问，请联系contact@cnblogs.com。			
+                    </div>                  
+                
+					</div>
+				</div>
+                
+                <div id="Editor_Edit_APOptions_APSiteCategory">
+					<div id="Editor_Edit_APOptions_APSiteCategory_Header" class="subCollapsibleTitle">
+						<a id="Editor_Edit_APOptions_APSiteCategory_Link" onclick="ToggleVisible(&#39;Editor_Edit_APOptions_APSiteCategory_Contents&#39;,&#39;Editor_Edit_APOptions_APSiteCategory_LinkImage&#39;,&#39;/resources/toggle_gray_up.gif&#39;,&#39;/resources/toggle_gray_down.gif&#39;); return false;" href="https://i.cnblogs.com/UserControls/#"><img id="Editor_Edit_APOptions_APSiteCategory_LinkImage" src="./博客后台管理 - 博客园_files/toggle_gray_down.gif"></a><span id="Editor_Edit_APOptions_APSiteCategory_headerTitle" class="subCollapsibleTitleText">网站分类</span>
+					</div><div id="Editor_Edit_APOptions_APSiteCategory_Contents" class="Edit" style="display:none;">
+						
+                    注：请为您的随笔选择最合适的分类，请不要发布在不相关的分类中，否则您的帐户会被取消网站分类发布权限。
+                    
+<div class="site_category">
+
+.NET技术：
+
+    <input type="radio" id="site_categroy_18156" name="name_site_categroy" value="18156">
+    <label for="site_categroy_18156">.NET新手区</label>
+    
+    <input type="radio" id="site_categroy_108699" name="name_site_categroy" value="108699">
+    <label for="site_categroy_108699">ASP.NET</label>
+    
+    <input type="radio" id="site_categroy_108700" name="name_site_categroy" value="108700">
+    <label for="site_categroy_108700">C#</label>
+    
+    <input type="radio" id="site_categroy_108760" name="name_site_categroy" value="108760">
+    <label for="site_categroy_108760">.NET Core</label>
+    
+    <input type="radio" id="site_categroy_108716" name="name_site_categroy" value="108716">
+    <label for="site_categroy_108716">WinForm</label>
+    
+    <input type="radio" id="site_categroy_108717" name="name_site_categroy" value="108717">
+    <label for="site_categroy_108717">Silverlight</label>
+    
+    <input type="radio" id="site_categroy_108718" name="name_site_categroy" value="108718">
+    <label for="site_categroy_108718">WCF</label>
+    
+    <input type="radio" id="site_categroy_108719" name="name_site_categroy" value="108719">
+    <label for="site_categroy_108719">CLR</label>
+    
+    <input type="radio" id="site_categroy_108720" name="name_site_categroy" value="108720">
+    <label for="site_categroy_108720">WPF</label>
+    
+    <input type="radio" id="site_categroy_108728" name="name_site_categroy" value="108728">
+    <label for="site_categroy_108728">XNA</label>
+    
+    <input type="radio" id="site_categroy_108729" name="name_site_categroy" value="108729">
+    <label for="site_categroy_108729">Visual Studio</label>
+    
+    <input type="radio" id="site_categroy_108730" name="name_site_categroy" value="108730">
+    <label for="site_categroy_108730">ASP.NET MVC</label>
+    
+    <input type="radio" id="site_categroy_108738" name="name_site_categroy" value="108738">
+    <label for="site_categroy_108738">控件开发</label>
+    
+    <input type="radio" id="site_categroy_108739" name="name_site_categroy" value="108739">
+    <label for="site_categroy_108739">Entity Framework</label>
+    
+    <input type="radio" id="site_categroy_108758" name="name_site_categroy" value="108758">
+    <label for="site_categroy_108758">NHibernate</label>
+    
+    <input type="radio" id="site_categroy_108745" name="name_site_categroy" value="108745">
+    <label for="site_categroy_108745">WinRT/Metro</label>
+    
+    <input type="radio" id="site_categroy_108763" name="name_site_categroy" value="108763">
+    <label for="site_categroy_108763">UWP</label>
+     
+<br>              
+
+编程语言：
+
+    <input type="radio" id="site_categroy_106876" name="name_site_categroy" value="106876">
+    <label for="site_categroy_106876">Java</label>
+    
+    <input type="radio" id="site_categroy_106880" name="name_site_categroy" value="106880">
+    <label for="site_categroy_106880">C++</label>
+    
+    <input type="radio" id="site_categroy_106882" name="name_site_categroy" value="106882">
+    <label for="site_categroy_106882">PHP</label>
+    
+    <input type="radio" id="site_categroy_106877" name="name_site_categroy" value="106877">
+    <label for="site_categroy_106877">Delphi</label>
+    
+    <input type="radio" id="site_categroy_108696" name="name_site_categroy" value="108696">
+    <label for="site_categroy_108696">Python</label>
+    
+    <input type="radio" id="site_categroy_106894" name="name_site_categroy" value="106894">
+    <label for="site_categroy_106894">Ruby</label>
+    
+    <input type="radio" id="site_categroy_108735" name="name_site_categroy" value="108735">
+    <label for="site_categroy_108735">C语言</label>
+    
+    <input type="radio" id="site_categroy_108746" name="name_site_categroy" value="108746">
+    <label for="site_categroy_108746">Erlang</label>
+    
+    <input type="radio" id="site_categroy_108748" name="name_site_categroy" value="108748">
+    <label for="site_categroy_108748">Go</label>
+    
+    <input type="radio" id="site_categroy_108751" name="name_site_categroy" value="108751">
+    <label for="site_categroy_108751">Swift</label>
+    
+    <input type="radio" id="site_categroy_108752" name="name_site_categroy" value="108752">
+    <label for="site_categroy_108752">Scala</label>
+    
+    <input type="radio" id="site_categroy_108753" name="name_site_categroy" value="108753">
+    <label for="site_categroy_108753">R语言</label>
+    
+    <input type="radio" id="site_categroy_108742" name="name_site_categroy" value="108742">
+    <label for="site_categroy_108742">Verilog</label>
+    
+    <input type="radio" id="site_categroy_108765" name="name_site_categroy" value="108765">
+    <label for="site_categroy_108765">Dart</label>
+    
+    <input type="radio" id="site_categroy_108754" name="name_site_categroy" value="108754">
+    <label for="site_categroy_108754">其它语言</label>
+     
+<br>              
+
+软件设计：
+
+    <input type="radio" id="site_categroy_106892" name="name_site_categroy" value="106892">
+    <label for="site_categroy_106892">架构设计</label>
+    
+    <input type="radio" id="site_categroy_108702" name="name_site_categroy" value="108702">
+    <label for="site_categroy_108702">面向对象</label>
+    
+    <input type="radio" id="site_categroy_106884" name="name_site_categroy" value="106884">
+    <label for="site_categroy_106884">设计模式</label>
+    
+    <input type="radio" id="site_categroy_108750" name="name_site_categroy" value="108750">
+    <label for="site_categroy_108750">领域驱动设计</label>
+     
+<br>              
+
+Web前端：
+
+    <input type="radio" id="site_categroy_106883" name="name_site_categroy" value="106883">
+    <label for="site_categroy_106883">Html/Css</label>
+    
+    <input type="radio" id="site_categroy_106893" name="name_site_categroy" value="106893">
+    <label for="site_categroy_106893">JavaScript</label>
+    
+    <input type="radio" id="site_categroy_108731" name="name_site_categroy" value="108731">
+    <label for="site_categroy_108731">jQuery</label>
+    
+    <input type="radio" id="site_categroy_108737" name="name_site_categroy" value="108737">
+    <label for="site_categroy_108737">HTML5</label>
+     
+<br>              
+
+企业信息化：
+
+    <input type="radio" id="site_categroy_108761" name="name_site_categroy" value="108761">
+    <label for="site_categroy_108761">BPM</label>
+    
+    <input type="radio" id="site_categroy_78111" name="name_site_categroy" value="78111">
+    <label for="site_categroy_78111">SharePoint</label>
+    
+    <input type="radio" id="site_categroy_50349" name="name_site_categroy" value="50349">
+    <label for="site_categroy_50349">GIS技术</label>
+    
+    <input type="radio" id="site_categroy_106878" name="name_site_categroy" value="106878">
+    <label for="site_categroy_106878">SAP</label>
+    
+    <input type="radio" id="site_categroy_108732" name="name_site_categroy" value="108732">
+    <label for="site_categroy_108732">Oracle ERP</label>
+    
+    <input type="radio" id="site_categroy_108734" name="name_site_categroy" value="108734">
+    <label for="site_categroy_108734">Dynamics</label>
+    
+    <input type="radio" id="site_categroy_108747" name="name_site_categroy" value="108747">
+    <label for="site_categroy_108747">K2 BPM</label>
+    
+    <input type="radio" id="site_categroy_108749" name="name_site_categroy" value="108749">
+    <label for="site_categroy_108749">信息安全</label>
+    
+    <input type="radio" id="site_categroy_3" name="name_site_categroy" value="3">
+    <label for="site_categroy_3">企业信息化其他</label>
+     
+<br>              
+
+手机开发：
+
+    <input type="radio" id="site_categroy_108706" name="name_site_categroy" value="108706">
+    <label for="site_categroy_108706">Android开发</label>
+    
+    <input type="radio" id="site_categroy_108707" name="name_site_categroy" value="108707">
+    <label for="site_categroy_108707">iOS开发</label>
+    
+    <input type="radio" id="site_categroy_108736" name="name_site_categroy" value="108736">
+    <label for="site_categroy_108736">Windows Phone</label>
+    
+    <input type="radio" id="site_categroy_108708" name="name_site_categroy" value="108708">
+    <label for="site_categroy_108708">Windows Mobile</label>
+    
+    <input type="radio" id="site_categroy_106886" name="name_site_categroy" value="106886">
+    <label for="site_categroy_106886">其他手机开发</label>
+     
+<br>              
+
+软件工程：
+
+    <input type="radio" id="site_categroy_108710" name="name_site_categroy" value="108710">
+    <label for="site_categroy_108710">敏捷开发</label>
+    
+    <input type="radio" id="site_categroy_106891" name="name_site_categroy" value="106891">
+    <label for="site_categroy_106891">项目与团队管理</label>
+    
+    <input type="radio" id="site_categroy_106889" name="name_site_categroy" value="106889">
+    <label for="site_categroy_106889">软件工程其他</label>
+     
+<br>              
+
+数据库技术：
+
+    <input type="radio" id="site_categroy_108713" name="name_site_categroy" value="108713">
+    <label for="site_categroy_108713">SQL Server</label>
+    
+    <input type="radio" id="site_categroy_108714" name="name_site_categroy" value="108714">
+    <label for="site_categroy_108714">Oracle</label>
+    
+    <input type="radio" id="site_categroy_108715" name="name_site_categroy" value="108715">
+    <label for="site_categroy_108715">MySQL</label>
+    
+    <input type="radio" id="site_categroy_108743" name="name_site_categroy" value="108743">
+    <label for="site_categroy_108743">NoSQL</label>
+    
+    <input type="radio" id="site_categroy_108756" name="name_site_categroy" value="108756">
+    <label for="site_categroy_108756">大数据</label>
+    
+    <input type="radio" id="site_categroy_106881" name="name_site_categroy" value="106881">
+    <label for="site_categroy_106881">其它数据库</label>
+     
+<br>              
+
+操作系统：
+
+    <input type="radio" id="site_categroy_108721" name="name_site_categroy" value="108721">
+    <label for="site_categroy_108721">Windows</label>
+    
+    <input type="radio" id="site_categroy_108725" name="name_site_categroy" value="108725">
+    <label for="site_categroy_108725">Windows Server</label>
+    
+    <input type="radio" id="site_categroy_108726" name="name_site_categroy" value="108726">
+    <label for="site_categroy_108726">Linux</label>
+    
+    <input type="radio" id="site_categroy_108755" name="name_site_categroy" value="108755">
+    <label for="site_categroy_108755">OS X</label>
+    
+    <input type="radio" id="site_categroy_108757" name="name_site_categroy" value="108757">
+    <label for="site_categroy_108757">嵌入式</label>
+     
+<br>              
+
+其他分类：
+
+    <input type="radio" id="site_categroy_807" name="name_site_categroy" value="807">
+    <label for="site_categroy_807">非技术区</label>
+    
+    <input type="radio" id="site_categroy_106879" name="name_site_categroy" value="106879">
+    <label for="site_categroy_106879">软件测试</label>
+    
+    <input type="radio" id="site_categroy_33909" name="name_site_categroy" value="33909">
+    <label for="site_categroy_33909">代码与软件发布</label>
+    
+    <input type="radio" id="site_categroy_106885" name="name_site_categroy" value="106885">
+    <label for="site_categroy_106885">计算机图形学</label>
+    
+    <input type="radio" id="site_categroy_106895" name="name_site_categroy" value="106895">
+    <label for="site_categroy_106895">Google开发</label>
+    
+    <input type="radio" id="site_categroy_108759" name="name_site_categroy" value="108759">
+    <label for="site_categroy_108759">游戏开发</label>
+    
+    <input type="radio" id="site_categroy_106888" name="name_site_categroy" value="106888">
+    <label for="site_categroy_106888">程序人生</label>
+    
+    <input type="radio" id="site_categroy_106890" name="name_site_categroy" value="106890">
+    <label for="site_categroy_106890">求职面试</label>
+    
+    <input type="radio" id="site_categroy_5079" name="name_site_categroy" value="5079">
+    <label for="site_categroy_5079">读书区</label>
+    
+    <input type="radio" id="site_categroy_4347" name="name_site_categroy" value="4347">
+    <label for="site_categroy_4347">转载区</label>
+    
+    <input type="radio" id="site_categroy_108733" name="name_site_categroy" value="108733">
+    <label for="site_categroy_108733">Windows CE</label>
+    
+    <input type="radio" id="site_categroy_106875" name="name_site_categroy" value="106875">
+    <label for="site_categroy_106875">翻译区</label>
+    
+    <input type="radio" id="site_categroy_108722" name="name_site_categroy" value="108722">
+    <label for="site_categroy_108722">开源研究</label>
+    
+    <input type="radio" id="site_categroy_108723" name="name_site_categroy" value="108723">
+    <label for="site_categroy_108723">Flex</label>
+    
+    <input type="radio" id="site_categroy_108740" name="name_site_categroy" value="108740">
+    <label for="site_categroy_108740">云计算</label>
+    
+    <input type="radio" id="site_categroy_108741" name="name_site_categroy" value="108741">
+    <label for="site_categroy_108741">算法与数据结构</label>
+    
+    <input type="radio" id="site_categroy_108762" name="name_site_categroy" value="108762">
+    <label for="site_categroy_108762">人工智能</label>
+    
+    <input type="radio" id="site_categroy_108764" name="name_site_categroy" value="108764">
+    <label for="site_categroy_108764">区块链</label>
+    
+    <input type="radio" id="site_categroy_108766" name="name_site_categroy" value="108766">
+    <label for="site_categroy_108766">网络安全</label>
+    
+    <input type="radio" id="site_categroy_7734" name="name_site_categroy" value="7734">
+    <label for="site_categroy_7734">其他技术区</label>
+     
+<br>              
+
+<input type="radio" id="site_categroy_0" name="name_site_categroy" value="0">
+<label for="site_categroy_0">取消选择</label>
+</div> 
+                
+					</div>
+				</div>
+                
+            </div>
+        
+			</div>
+		</div>
+        <div id="Editor_Edit_Advanced">
+			<div id="Editor_Edit_Advanced_Header" class="CollapsibleTitle">
+				<a id="Editor_Edit_Advanced_Link" onclick="ToggleVisible(&#39;Editor_Edit_Advanced_Contents&#39;,&#39;Editor_Edit_Advanced_LinkImage&#39;,&#39;/resources/toggle_gray_up.gif&#39;,&#39;/resources/toggle_gray_down.gif&#39;); return false;" href="https://i.cnblogs.com/UserControls/#"><img id="Editor_Edit_Advanced_LinkImage" src="./博客后台管理 - 博客园_files/toggle_gray_down.gif"></a><span id="Editor_Edit_Advanced_headerTitle" class="CollapsibleTitle">高级选项</span>
+			</div><div id="Editor_Edit_Advanced_Contents" class="Edit">
+				
+            <div class="edit_option">                
+                <ul class="edit_option_ul">
+                    <li>
+                        <label for="Editor_Edit_Advanced_ckbPublished">发布</label><input id="Editor_Edit_Advanced_ckbPublished" type="checkbox" name="Editor$Edit$Advanced$ckbPublished" checked="checked">
+                    </li>
+                    <li>
+                    <label for="Editor_Edit_Advanced_chkDisplayHomePage">显示在我的博客首页</label><input id="Editor_Edit_Advanced_chkDisplayHomePage" type="checkbox" name="Editor$Edit$Advanced$chkDisplayHomePage" checked="checked">
+                    </li>
+                    <li>
+                        <label for="Editor_Edit_Advanced_chkComments">允许评论</label><input id="Editor_Edit_Advanced_chkComments" type="checkbox" name="Editor$Edit$Advanced$chkComments" checked="checked">
+                    </li>
+                    <li>
+                        
+                    </li>
+                    <li>
+                        <label for="Editor_Edit_Advanced_chkMainSyndication">显示在RSS中</label><input id="Editor_Edit_Advanced_chkMainSyndication" type="checkbox" name="Editor$Edit$Advanced$chkMainSyndication" checked="checked">
+                    </li>
+                    <li>
+                        
+                    </li>
+                    <li>
+                        <label for="Editor_Edit_Advanced_chkPinned">置顶</label><input id="Editor_Edit_Advanced_chkPinned" type="checkbox" name="Editor$Edit$Advanced$chkPinned">
+                    </li>
+                    <li>
+                        <label for="Editor_Edit_Advanced_chkIsOnlyForRegisterUser">只允许注册用户访问</label><input id="Editor_Edit_Advanced_chkIsOnlyForRegisterUser" type="checkbox" name="Editor$Edit$Advanced$chkIsOnlyForRegisterUser">
+                    </li>
+                    <li>
+                        
+                    </li>
+                </ul>
+                <div>
+                    
+                     
+                </div>                   
+                <div>
+                    EntryName(友好地址名，只能使用字母、数字、-连字符、_下划线，不超过150个字符)<br>
+                    <input name="Editor$Edit$Advanced$txbEntryName" type="text" maxlength="150" id="Editor_Edit_Advanced_txbEntryName" onblur="checkEntryName()" style="width: 470px"><br>
+                    <span id="entryname_tip"></span>
+                </div>
+                <div>
+                    摘要:&nbsp;&nbsp;<a href="https://i.cnblogs.com/EditPosts.aspx?opt=1#" onclick="return insertDescImg()">插入摘要右侧图片</a><br>
+                    <textarea name="Editor$Edit$Advanced$txbExcerpt" rows="4" cols="20" id="Editor_Edit_Advanced_txbExcerpt" style="width:98%;"></textarea><br>
+
+                </div>
+                <div id="Editor_Edit_Advanced_divTrackBack">
+                    <div class="itemspace">
+                        Tag标签:
+                        <input name="Editor$Edit$Advanced$txbTag" type="text" id="Editor_Edit_Advanced_txbTag" style="width: 500px">&nbsp;<a onclick="leftVal = (screen.width - 300) / 2;topVal = (screen.height - 500) / 2;window.open(&#39;/tags/list?id=20160213&#39;,&#39;_blank&#39;,&#39;width=300,height=500,toolbars=yes,resizable=yes,scrollbars=yes,left=&#39;+leftVal+&#39;,top=&#39;+topVal);return false;" href="javascript:void(0);">插入已有标签</a>&nbsp;(多个关键字之间用“,”分隔，最多不超过10个)</div>
+                    
+                </div>
+
+                <div class="itemspace">
+                    密码保护:&nbsp;<input name="Editor$Edit$Advanced$tbEnryPassword" type="text" id="Editor_Edit_Advanced_tbEnryPassword" style="width: 200px">
+                </div>
+            </div>
+        
+			</div>
+		</div>
+
+        <div class="post_block">
+            <input type="submit" name="Editor$Edit$lkbPost" value="发布" onclick="return CheckInput();" id="Editor_Edit_lkbPost" class="Button">
+            <input type="submit" name="Editor$Edit$lkbDraft" value="存为草稿" onclick="return CheckInput();" id="Editor_Edit_lkbDraft" class="Button">
+            
+            <input type="submit" name="Editor$Edit$lkbCancel" value="取消" onclick="return CancelPost();" id="Editor_Edit_lkbCancel" class="Button">            
+        </div>         
+        <div style="clear:both;"></div>      
+        <span id="tip_posging" style="padding-left:20px;color:red; vertical-align: middle;"></span> 
+        <div style="padding-bottom:10px;margin-top:10px;"> 
+        
+        </div> 
+    </div>
+
+	</div>
+</div>
+
+<span id="currentPostId" style="display:none;"></span>
+
+
+
+
+
+
+<script type="text/javascript">    
+    $(function () {
+        if (isEdit) {
+            document.getElementById('Editor_Edit_txbTitle').focus();
+            if (currentUseEditor == 1) {
+                var editor1 = document.getElementById(currentEditorId);
+                if (editor1.IsReady) CuteEditor_OnInitialized(editor1);
+            }
+            setInterval(localPreserver.saveDraftBody, 10000);
+            localPreserver.showViewTip();            
+        }
+        
+    });
+</script>
+
+
+						</div>
+					</td>
+				</tr>
+			</tbody></table>
+            <div id="blog_top_nav_block">
+                <div id="site_nav">
+                «<a href="http://www.cnblogs.com/">网站首页</a><a href="http://home.cnblogs.com/">园子</a><a href="http://news.cnblogs.com/">新闻</a><a href="https://q.cnblogs.com/">博问</a><a href="https://ing.cnblogs.com/">闪存</a><a href="http://wz.cnblogs.com/">收藏</a><a href="http://zzk.cnblogs.com/my?app=Blogpost">搜索</a>
+                </div> 
+                <div id="login_area">          
+                <span id="span_userinfo"><a id="lnkBlogUrl" href="https://home.cnblogs.com/u/chengyunshen/">橙云生</a> · <a href="https://msg.cnblogs.com/" target="_blank" id="lnk_site_msg">短消息</a> · <a href="http://passport.cnblogs.com/logout.aspx?ReturnURL=https://www.cnblogs.com/chengyunshen/" onclick="return confirm(&#39;确认要退出登录吗?&#39;)">退出</a></span>
+                </div>
+                <div class="clear"></div> 
+            </div>
+			<table id="Footer" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td colspan="2">
+						<div>
+							<a href="http://www.cnblogs.com/ContactUs.aspx">联系我们</a> <a href="http://space.cnblogs.com/forum/public">反馈问题</a> @2019&nbsp;<a id="lnkSite" href="https://www.cnblogs.com/">博客园</a> &nbsp;技术改变世界
+						</div>
+					</td>
+				</tr>
+			</tbody></table>
+		</form>
+        <script type="text/javascript">
+             GetNewMsgCount();
+        </script>        
+	
+
+
+</body></html>
